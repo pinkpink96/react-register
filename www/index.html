@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/app.css">
+    <script src="static/js/jquery-3.4.1.min.js"></script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/way.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid p-3">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-6">
+
+                <div id="panel_registration" class="pb-3">
+                    <h4>2FA Registration</h4>
+
+                    <form way-data="twofadata">
+                        <div class="form-group">
+                            <label for="txt_username">Username</label>
+                            <input type="text" class="form-control" id="txt_username" name="username" aria-describedby="usernameHelp">
+                            <small id="usernameHelp" class="form-text text-muted">Please enter username.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="txt_password">Password</label>
+                            <input type="password" class="form-control" id="txt_password" name="password">
+                        </div>
+
+                        <div class="d-flex align-items-center">
+                            <button id="btn_register" type="button" class="btn btn-primary">Register</button>
+                            <div id="panel_loading" class="pl-3 d-none">
+                                <div class="spinner-border text-primary" role="status">
+                                  <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="panel_welcome" class="pb-3 d-none">
+                    <div class="d-flex align-items-center">
+
+                        Welcome, <b class="pl-3" way-data="twofadata.username"></b>.
+
+                        <button id="btn_logout" type="button" class="ml-auto btn btn-primary">Logout</button>
+                    </div>
+                </div>
+
+                <div id="panel_qrcode" class="card d-none">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <ol>
+                                <li>Open Authenticator app</li>
+                                <li>Select <b>Setup account</b> or <b>Add account</b></li>
+                                <li>Select <b>Scan QR Code</b></li>
+                            </ol>
+                        </p>
+
+                        <div class="text-center">
+                            <img id="img_qrcode" src="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="static/js/app.js"></script>
+</body>
+
+</html>
